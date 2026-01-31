@@ -15,7 +15,6 @@
             --white: #ffffff;
             --gray: #6b7280;
             --light-gray: #e5e7eb;
-            --dark-gold: #9a7a57;
             --accent: #7c9fb0;
         }
 
@@ -68,7 +67,6 @@
             transition: 0.3s;
             font-weight: 500;
         }
-
         .nav-cta:hover { background: var(--gold); }
 
         .hero {
@@ -81,7 +79,6 @@
             background-position: center;
             color: white;
             padding: 0 2rem;
-            padding-top: 80px;
         }
 
         .hero-content { max-width: 1400px; margin: 0 auto; width: 100%; }
@@ -92,25 +89,23 @@
         
         .about-grid, .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         
-        .service-card { background: white; padding: 2.5rem; border-top: 4px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
-        .service-card:hover { transform: translateY(-5px); }
+        .service-card { background: white; padding: 2.5rem; border-top: 4px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        .form-group { margin-bottom: 1.5rem; text-align: left; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
-        input, textarea, select { width: 100%; padding: 1rem; border: 1px solid var(--light-gray); margin-top: 0.5rem; font-family: inherit; font-size: 1rem; }
-        input:focus, textarea:focus, select:focus { outline: none; border-color: var(--gold); }
+        .form-group { margin-bottom: 1.2rem; text-align: left; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
+        input, textarea, select { width: 100%; padding: 0.8rem; border: 1px solid var(--light-gray); margin-top: 0.3rem; font-family: inherit; }
 
         .submit-btn {
             background: var(--navy);
             color: white;
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             border: none;
             width: 100%;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1rem;
             transition: 0.3s;
-            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .submit-btn:hover { background: var(--gold); }
 
@@ -122,7 +117,6 @@
         @media (max-width: 768px) {
             .about-grid, .contact-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
-            .about, .services, .contact { padding: 4rem 1.5rem; }
         }
     </style>
 </head>
@@ -142,47 +136,43 @@
 
     <section class="hero">
         <div class="hero-content">
-            <p style="color: var(--gold); letter-spacing: 3px; margin-bottom: 1rem; text-transform: uppercase; font-weight: 500;">Mentálhigén Szakember</p>
+            <p style="color: var(--gold); letter-spacing: 3px; margin-bottom: 1rem; text-transform: uppercase; font-weight: 600;">Mentálhigén Szakember</p>
             <h1>Támogatás a lelki egyensúly megőrzéséhez</h1>
-            <p style="font-size: 1.2rem; max-width: 600px; margin-bottom: 2.5rem; font-weight: 300;">Segítek megtalálni belső erőforrásait egy elfogadó, biztonságos légkörben.</p>
-            <a href="#kapcsolat" style="background: var(--gold); color: white; padding: 1rem 2.5rem; text-decoration: none; display: inline-block; font-weight: 500; transition: 0.3s;">Ingyenes konzultáció</a>
+            <p style="font-size: 1.2rem; max-width: 600px; margin-bottom: 2.5rem;">Segítek megtalálni belső erőforrásait egy elfogadó környezetben.</p>
+            <a href="#kapcsolat" style="background: var(--gold); color: white; padding: 1rem 2rem; text-decoration: none; display: inline-block; font-weight: 500;">Ingyenes konzultáció</a>
         </div>
     </section>
 
     <section class="about" id="rolam">
         <div class="about-grid fade-in">
-            <div style="height: 500px; background: #eee; position: relative;">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Mentálhigén szakember" style="width:100%; height:100%; object-fit:cover;">
-                <div style="position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px; border: 2px solid var(--gold); z-index: -1;"></div>
+            <div style="height: 450px; background: #eee;">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Szakember" style="width:100%; height:100%; object-fit:cover;">
             </div>
             <div>
                 <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem;">Bemutatkozás</h2>
-                <p style="margin-bottom: 1rem;">Mentálhigén szakemberként célom, hogy segítsek a hozzám fordulóknak a belső egyensúly megtalálásában és a tudatosabb életvitel kialakításában.</p>
-                <p style="font-style: italic; border-left: 3px solid var(--gold); padding-left: 1rem; margin: 2rem 0; font-size: 1.1rem; color: var(--navy);">
-                    "A közös munka során egy ítélkezésmentes térben keressük a megoldásokat az élet kihívásaira."
+                <p>Mentálhigén szakemberként abban segítek, hogy egy biztonságos térben ránézhessünk azokra az elakadásokra, amelyek nehezítik a mindennapjait.</p>
+                <p style="font-style: italic; border-left: 3px solid var(--gold); padding-left: 1rem; margin: 2rem 0;">
+                    "A közös munka alapja a bizalom és az ítélkezésmentes odafordulás."
                 </p>
-                <p>Hiszem, hogy mindenki rendelkezik azokkal a belső válaszokkal, amelyek a fejlődéséhez szükségesek – én a folyamat kísérésében és a tisztánlátásban segítek.</p>
             </div>
         </div>
     </section>
 
     <section class="services" id="tamogatas">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 4rem;" class="fade-in">
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Miben tudok segíteni?</h2>
-            </div>
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 4rem;" class="fade-in">Miben tudok segíteni?</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <div class="service-card fade-in">
-                    <h3 style="margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Stresszkezelés</h3>
-                    <p>Hatékony technikák a mindennapi feszültség, a munkahelyi kiégés és a szorongás enyhítésére.</p>
+                    <h3>Önismeret</h3>
+                    <p>Saját belső világunk megismerése és az önelfogadás mélyítése.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <h3 style="margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Önismeret</h3>
-                    <p>Saját működési módjaink megértése, az önértékelés fejlesztése és a belső gátak feloldása.</p>
+                    <h3>Stresszkezelés</h3>
+                    <p>Megküzdési stratégiák a feszültségteli élethelyzetek kezelésére.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <h3 style="margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Életviteli tanácsadás</h3>
-                    <p>Támogatás fontos döntési helyzetekben, krízisekben és élethelyzeti elakadások esetén.</p>
+                    <h3>Kríziskezelés</h3>
+                    <p>Támogatás nehéz döntések vagy hirtelen változások esetén.</p>
                 </div>
             </div>
         </div>
@@ -192,12 +182,9 @@
         <div class="contact-grid">
             <div class="fade-in">
                 <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem;">Beszélgessünk!</h2>
-                <p style="color: var(--gray); margin-bottom: 2rem;">Kérdése van, vagy időpontot szeretne kérni? Töltse ki az űrlapot, és 24 órán belül jelentkezem.</p>
-                <div style="margin-top: 2rem; line-height: 2;">
-                    <p><strong>Email:</strong> zolti1999@gmail.com</p>
-                    <p><strong>Helyszín:</strong> Budapest / Online konzultáció</p>
-                    <p><strong>Időpontok:</strong> Hétfő - Péntek: 08:00 - 18:00</p>
-                </div>
+                <p style="margin-bottom: 2rem;">Ha elindulna a változás útján, keressen bizalommal. Az üzenete közvetlenül hozzám érkezik meg.</p>
+                <p><strong>Email:</strong> zolti1999@gmail.com</p>
+                <p><strong>Helyszín:</strong> Budapest / Online</p>
             </div>
             <div class="fade-in" style="background: white; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.05);">
                 <form action="https://formspree.io/f/xpwqyqzl" method="POST">
@@ -214,11 +201,11 @@
                         <input type="tel" name="Telefon">
                     </div>
                     <div class="form-group">
-                        <label>Miben kér segítséget?</label>
+                        <label>Téma</label>
                         <select name="Téma">
                             <option value="Onismeret">Önismeret</option>
-                            <option value="Stresszkezeles">Stresszkezelés</option>
-                            <option value="Elethelyzeti elakadas">Élethelyzeti elakadás</option>
+                            <option value="Stressz">Stresszkezelés</option>
+                            <option value="Krizis">Krízis/Elakadás</option>
                             <option value="Egyeb">Egyéb</option>
                         </select>
                     </div>
@@ -226,7 +213,6 @@
                         <label>Üzenet szövege</label>
                         <textarea name="Üzenet" rows="4"></textarea>
                     </div>
-                    <input type="text" name="_gotcha" style="display:none">
                     <button type="submit" class="submit-btn">Üzenet küldése</button>
                 </form>
             </div>
@@ -234,11 +220,10 @@
     </section>
 
     <footer>
-        <p style="font-size: 0.9rem; opacity: 0.8;">&copy; 2026 Mentálhigén. Minden jog fenntartva.</p>
+        <p>&copy; 2026 Mentálhigén. Minden jog fenntartva.</p>
     </footer>
 
     <script>
-        // Megjelenési animációk
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -247,7 +232,6 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Görgetés a kapcsolathoz
         function scrollToContact() {
             document.getElementById('kapcsolat').scrollIntoView({ behavior: 'smooth' });
         }
