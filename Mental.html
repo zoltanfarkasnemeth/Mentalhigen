@@ -31,6 +31,7 @@
             color: var(--navy);
             background: var(--white);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Navigation */
@@ -47,7 +48,7 @@
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.5rem 4rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -63,7 +64,7 @@
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2rem;
             list-style: none;
         }
 
@@ -73,7 +74,6 @@
             font-size: 0.95rem;
             font-weight: 500;
             transition: color 0.3s;
-            letter-spacing: 0.3px;
         }
 
         .nav-links a:hover {
@@ -81,15 +81,13 @@
         }
 
         .nav-cta {
-            padding: 0.75rem 1.8rem;
+            padding: 0.6rem 1.4rem;
             background: var(--navy);
             color: white;
             border: none;
             cursor: pointer;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
             transition: all 0.3s;
-            letter-spacing: 0.3px;
         }
 
         .nav-cta:hover {
@@ -98,125 +96,82 @@
 
         /* Hero Section */
         .hero {
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
-            background: linear-gradient(135deg, rgba(44, 74, 94, 0.95) 0%, rgba(124, 159, 176, 0.9) 100%), 
-                        url('data:image/svg+xml,<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg"><rect fill="%23f0ebe3" width="1920" height="1080"/></svg>');
+            background: linear-gradient(135deg, rgba(44, 74, 94, 0.9) 0%, rgba(124, 159, 176, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1499209974431-9dac3adaf471?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(201, 168, 106, 0.15) 0%, transparent 50%);
+            color: white;
+            padding: 0 2rem;
+            padding-top: 80px;
         }
 
         .hero-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 4rem;
-            position: relative;
-            z-index: 1;
-            color: white;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            width: 100%;
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 600;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             line-height: 1.1;
-            margin-bottom: 2rem;
-            max-width: 900px;
-            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
         }
 
         .hero-description {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 3rem;
-            line-height: 1.9;
-            opacity: 0.95;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
             font-weight: 300;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 1.1rem 2.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            letter-spacing: 0.5px;
-        }
-
         .btn-primary {
+            padding: 1rem 2rem;
             background: var(--gold);
             color: white;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
         }
 
         .btn-primary:hover {
             background: var(--dark-gold);
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(201, 168, 106, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--navy);
         }
 
         /* About Section */
         .about {
-            padding: 8rem 4rem;
-            background: white;
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        .about-grid {
             display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 6rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-image {
-            width: 100%;
-            aspect-ratio: 3/4;
-            background: linear-gradient(135deg, var(--accent), var(--gold));
             position: relative;
-            overflow: hidden;
+            height: 500px;
+            background: #eee;
         }
 
-        .about-image::before {
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .about-image::after {
             content: '';
             position: absolute;
             top: 20px;
@@ -224,341 +179,77 @@
             right: -20px;
             bottom: -20px;
             border: 2px solid var(--gold);
+            z-index: -1;
         }
 
-        .about-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--navy);
-        }
-
-        .about-content .subtitle-text {
-            font-size: 1.1rem;
-            color: var(--gold);
-            margin-bottom: 2rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .about-content p {
-            color: var(--gray);
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .about-quote {
-            margin: 2.5rem 0;
-            padding-left: 2rem;
-            border-left: 4px solid var(--gold);
-            font-style: italic;
-            color: var(--navy);
-            font-size: 1.15rem;
-            line-height: 1.8;
-        }
-
-        /* Services Section */
+        /* Services */
         .services {
-            padding: 8rem 4rem;
+            padding: 6rem 2rem;
             background: var(--cream);
         }
 
-        .services-header {
-            max-width: 900px;
-            margin: 0 auto 5rem auto;
-            text-align: center;
-        }
-
-        .services-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--navy);
-        }
-
-        .services-header p {
-            font-size: 1.1rem;
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
         .services-grid {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .service-card {
             background: white;
-            padding: 3rem;
-            border-radius: 0;
-            transition: all 0.3s;
+            padding: 2.5rem;
             border-top: 4px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--accent), var(--gold));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .service-icon svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
-
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            color: var(--navy);
-        }
-
-        .service-card p {
-            color: var(--gray);
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        /* Support Areas Section */
-        .support-areas {
-            padding: 8rem 4rem;
-            background: white;
-        }
-
-        .support-container {
+        /* Contact Form */
+        .contact {
+            padding: 6rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .support-container h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--navy);
-            text-align: center;
-        }
-
-        .support-intro {
-            text-align: center;
-            color: var(--gray);
-            font-size: 1.1rem;
-            margin-bottom: 4rem;
-            line-height: 1.8;
-        }
-
-        .support-list {
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem;
-        }
-
-        .support-item {
-            padding: 2rem;
-            background: var(--cream);
-            border-left: 4px solid var(--gold);
-        }
-
-        .support-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: var(--navy);
-        }
-
-        .support-item p {
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 4rem;
-            background: var(--cream);
-        }
-
-        .contact-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-        }
-
-        .contact-info h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--navy);
-        }
-
-        .contact-details {
-            display: grid;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item h4 {
-            color: var(--gold);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item p {
-            color: var(--navy);
-            font-size: 1.1rem;
-        }
-
-        .contact-item a {
-            color: var(--navy);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: var(--gold);
-        }
-
-        .contact-form {
-            background: white;
-            padding: 3rem;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
         }
 
         .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--navy);
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+        input, textarea, select {
             width: 100%;
             padding: 1rem;
             border: 1px solid var(--light-gray);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            margin-top: 0.5rem;
         }
 
         .submit-btn {
-            width: 100%;
-            padding: 1.2rem;
             background: var(--navy);
             color: white;
+            padding: 1rem 2rem;
             border: none;
-            font-size: 1rem;
-            font-weight: 500;
+            width: 100%;
             cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 0.5px;
-        }
-
-        .submit-btn:hover {
-            background: var(--gold);
+            font-weight: 600;
         }
 
         /* Footer */
         footer {
             background: var(--navy);
             color: white;
-            padding: 4rem 4rem 2rem 4rem;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--gold);
-        }
-
-        .footer-description {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        .footer-section h4 {
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
             text-align: center;
-            color: rgba(255, 255, 255, 0.6);
         }
 
         /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
+            transform: translateY(20px);
+            transition: 0.6s all ease-out;
         }
 
         .fade-in.visible {
@@ -566,333 +257,103 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .about-container,
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-            }
-
-            .about-image {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-        }
-
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 1rem 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero-content,
-            .about,
-            .services,
-            .support-areas,
-            .contact {
-                padding: 4rem 2rem;
-            }
-
-            .services-grid,
-            .support-list {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav>
         <div class="nav-container">
             <div class="logo">Mentálhigiéné</div>
             <ul class="nav-links">
                 <li><a href="#rolam">Rólam</a></li>
-                <li><a href="#tamogatas">Támogatás</a></li>
-                <li><a href="#teruletek">Területek</a></li>
+                <li><a href="#tamogatas">Miben segíthetek?</a></li>
                 <li><a href="#kapcsolat">Kapcsolat</a></li>
             </ul>
             <button class="nav-cta" onclick="scrollToContact()">Időpontfoglalás</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-subtitle">Mentálhigiénés Szakember</div>
+            <p style="color: var(--gold); letter-spacing: 3px; margin-bottom: 1rem;">MENTÁLHIGIÉNÉS SZAKEMBER</p>
             <h1>Támogatás a lelki egyensúly megőrzéséhez</h1>
-            <p class="hero-description">
-                Biztonságos, elfogadó légkörben segítek megtalálni belső erőforrásait, 
-                és kiegyensúlyozottabb, tudatosabb életet élni. A közös munka fókuszában 
-                az Ön egyéni élethelyzete, erősségei és céljai állnak.
-            </p>
-            <div class="hero-buttons">
-                <button class="btn-primary" onclick="scrollToContact()">Ingyenes konzultáció</button>
-                <button class="btn-secondary" onclick="document.getElementById('rolam').scrollIntoView({ behavior: 'smooth' })">Tudjon meg többet</button>
-            </div>
+            <p class="hero-description">Biztonságos, elfogadó légkörben segítek megtalálni belső erőforrásait, és kiegyensúlyozottabb életet élni.</p>
+            <a href="#kapcsolat" class="btn-primary">Ingyenes konzultáció</a>
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="rolam">
-        <div class="about-container fade-in">
+        <div class="about-grid fade-in">
             <div class="about-image">
-                <!-- Ide kerülhet egy valódi kép -->
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Szakember portré">
             </div>
             <div class="about-content">
-                <h2>Bemutatkozás</h2>
-                <div class="subtitle-text">Mentálhigiénés szakember</div>
-                <p>
-                    Mentálhigiénés szakemberként abban segítem a hozzám fordulókat, hogy jobban megértsék önmagukat, 
-                    megtalálják belső erőforrásaikat, és kiegyensúlyozottabb, tudatosabb életet élhessenek.
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Bemutatkozás</h2>
+                <p style="margin-bottom: 1rem;">Mentálhigiénés szakemberként abban segítem a hozzám fordulókat, hogy jobban megértsék önmagukat, megtalálják belső erőforrásaikat.</p>
+                <p style="font-style: italic; border-left: 3px solid var(--gold); padding-left: 1rem; margin: 2rem 0;">
+                    "A közös munka során biztonságos, ítélkezésmentes légkört teremtek, ahol lehetőség van megállni és reflektálni."
                 </p>
-                <p>
-                    Hiszem, hogy a lelki jóllét nem a problémák hiányát jelenti, hanem azt a képességet, 
-                    hogy meg tudunk küzdeni az élet kihívásaival.
-                </p>
-                <div class="about-quote">
-                    „Munkám során biztonságos, elfogadó és ítélkezésmentes légkört teremtek, ahol lehetőség 
-                    van megállni, reflektálni, és új nézőpontokat találni."
-                </div>
-                <p>
-                    A közös munka fókuszában az Ön egyéni élethelyzete, erősségei és céljai állnak. 
-                    A mentálhigiénés konzultáció nem terápia, hanem támogató, fejlesztő folyamat, amely 
-                    segíti az öngondoskodást, a lelki egyensúly megőrzését és az egészségesebb működés kialakítását.
-                </p>
+                <p>A mentálhigiénés konzultáció egy támogató folyamat, amely segíti az öngondoskodást és a lelki egyensúly kialakítását.</p>
             </div>
         </div>
     </section>
 
-    <!-- Support Section -->
     <section class="services" id="tamogatas">
-        <div class="services-header fade-in">
-            <h2>Miben tud segíteni egy mentálhigiénés szakember?</h2>
-            <p>
-                A mentálhigiénés támogatás célja az öngondoskodás, a lelki egyensúly megőrzése 
-                és az egészségesebb működés kialakítása.
-            </p>
+        <div style="text-align: center; margin-bottom: 4rem;" class="fade-in">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Miben tudok segíteni?</h2>
         </div>
         <div class="services-grid">
             <div class="service-card fade-in">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2L2 7v10c0 5.5 3.8 10.7 10 12 6.2-1.3 10-6.5 10-12V7l-10-5z"/>
-                    </svg>
-                </div>
-                <h3>Biztonságos tér</h3>
-                <p>
-                    Ítélkezésmentes, elfogadó légkört biztosítok, ahol szabadon beszélhet 
-                    érzéseiről, gondolatairól és kihívásairól.
-                </p>
-            </div>
-
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                        <circle cx="12" cy="7" r="4"/>
-                    </svg>
-                </div>
-                <h3>Önismeret fejlesztése</h3>
-                <p>
-                    Segítek mélyebben megérteni önmagát, felismerni erősségeit és 
-                    működési mintáit, amelyek befolyásolják az életét.
-                </p>
-            </div>
-
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/>
-                        <path d="M12 6v6l4 2"/>
-                    </svg>
-                </div>
-                <h3>Új nézőpontok</h3>
-                <p>
-                    Lehetőséget adok arra, hogy megálljon, reflektáljon, és új 
-                    perspektívákat találjon kihívásaival kapcsolatban.
-                </p>
-            </div>
-
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                    </svg>
-                </div>
                 <h3>Stresszkezelés</h3>
-                <p>
-                    Támogatom a stressz, szorongás és kimerültség feldolgozását, 
-                    valamint az egészségesebb megküzdési stratégiák kialakítását.
-                </p>
+                <p>Támogatom a stressz, szorongás és kimerültség feldolgozását, új megküzdési stratégiák kialakítását.</p>
             </div>
-
             <div class="service-card fade-in">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                </div>
-                <h3>Kapcsolati nehézségek</h3>
-                <p>
-                    Segítek párkapcsolati, családi vagy munkahelyi konfliktusok 
-                    feldolgozásában és a hatékonyabb kommunikáció kialakításában.
-                </p>
+                <h3>Önismeret</h3>
+                <p>Segítek mélyebben megérteni saját működési mintáit és felismerni rejtett erősségeit.</p>
             </div>
-
             <div class="service-card fade-in">
-                <div class="service-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
-                    </svg>
-                </div>
-                <h3>Életcélok tisztázása</h3>
-                <p>
-                    Támogatást nyújtok életcélok megfogalmazásában, döntési helyzetekben 
-                    és a személyes fejlődés útján.
-                </p>
+                <h3>Élethelyzeti elakadás</h3>
+                <p>Amikor átmeneti nehézséggel küzd, és nem tudja, hogyan haladjon tovább a döntési helyzetekben.</p>
             </div>
         </div>
     </section>
 
-    <!-- Support Areas Section -->
-    <section class="support-areas" id="teruletek">
-        <div class="support-container">
-            <h2 class="fade-in">Mikor lehet hasznos a mentálhigiénés támogatás?</h2>
-            <p class="support-intro fade-in">
-                A mentálhigiénés konzultáció többféle élethelyzetben nyújthat segítséget
-            </p>
-            <div class="support-list">
-                <div class="support-item fade-in">
-                    <h3>Élethelyzeti elakadások, krízisek</h3>
-                    <p>
-                        Amikor átmeneti nehézségekkel küzd, vagy olyan helyzetbe került, 
-                        amelyben nem tudja, hogyan haladjon tovább.
-                    </p>
-                </div>
-
-                <div class="support-item fade-in">
-                    <h3>Stressz, szorongás, kimerültség</h3>
-                    <p>
-                        Ha úgy érzi, túlterhelt, folyamatos feszültségben él, vagy 
-                        kimerültnek és energiátlannak érzi magát.
-                    </p>
-                </div>
-
-                <div class="support-item fade-in">
-                    <h3>Önismereti kérdések</h3>
-                    <p>
-                        Amikor szeretné jobban megérteni önmagát, motivációit, 
-                        vagy önértékelési nehézségekkel küzd.
-                    </p>
-                </div>
-
-                <div class="support-item fade-in">
-                    <h3>Kapcsolati konfliktusok</h3>
-                    <p>
-                        Párkapcsolati, családi vagy munkahelyi konfliktusok feldolgozásában, 
-                        ahol segítségre van szüksége a megértésben és megoldáskeresésben.
-                    </p>
-                </div>
-
-                <div class="support-item fade-in">
-                    <h3>Veszteségek, változások, gyász</h3>
-                    <p>
-                        Amikor veszteséget élt át, nagy változáson megy keresztül, 
-                        vagy gyászol, és nehezen dolgozza fel az érzéseit.
-                    </p>
-                </div>
-
-                <div class="support-item fade-in">
-                    <h3>Döntési helyzetek</h3>
-                    <p>
-                        Életcélok tisztázásában, amikor fontos döntések előtt áll, 
-                        és szeretné átgondolni lehetőségeit.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section class="contact" id="kapcsolat">
-        <div class="contact-container">
-            <div class="contact-info fade-in">
-                <h2>Beszélgessünk!</h2>
-                <p style="color: var(--gray); line-height: 1.8; margin-bottom: 2rem;">
-                    Ha úgy érzi, jólesne egy támogató beszélgetés, ahol valóban figyelmet kap, 
-                    szeretettel várom. Az első konzultáció ingyenes, semmilyen kötelezettséggel nem jár.
-                </p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <h4>Telefon</h4>
-                        <p><a href="tel:+36301234567">+36 30 123 4567</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Email</h4>
-                        <p><a href="mailto:info@mentalhigienes.hu">info@mentalhigienes.hu</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Helyszín</h4>
-                        <p>Budapest, több helyszínen<br>megbeszélés szerint</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Rendelkezésre állás</h4>
-                        <p>Hétfő - Péntek: 9:00 - 18:00<br>Hétvégén előzetes egyeztetéssel</p>
-                    </div>
+        <div class="contact-grid">
+            <div class="fade-in">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem;">Beszélgessünk!</h2>
+                <p>Keressen bizalommal az alábbi elérhetőségeken, vagy töltse ki az űrlapot.</p>
+                <div style="margin-top: 2rem;">
+                    <p><strong>Email:</strong> info@mentalhigienes.hu</p>
+                    <p><strong>Helyszín:</strong> Budapest, XI. kerület / Online</p>
                 </div>
             </div>
-
-            <div class="contact-form fade-in">
+            <div class="fade-in">
                 <form onsubmit="handleSubmit(event)">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Név *</label>
-                            <input type="text" required placeholder="Teljes név">
-                        </div>
-                        <div class="form-group">
-                            <label>Telefonszám *</label>
-                            <input type="tel" required placeholder="+36 20 123 4567">
-                        </div>
+                    <div class="form-group">
+                        <label>Név</label>
+                        <input type="text" required>
                     </div>
                     <div class="form-group">
-                        <label>Email cím *</label>
-                        <input type="email" required placeholder="email@example.com">
+                        <label>Email cím</label>
+                        <input type="email" required>
                     </div>
                     <div class="form-group">
                         <label>Miben segíthetek?</label>
                         <select>
-                            <option>Élethelyzeti krízis</option>
-                            <option>Stressz, szorongás</option>
-                            <option>Önismeret, önértékelés</option>
-                            <option>Kapcsolati konfliktusok</option>
-                            <option>Veszteség, gyász</option>
-                            <option>Életcélok tisztázása</option>
-                            <option>Egyéb</option>
+                            <option>Önismeret</option>
+                            <option>Stresszkezelés</option>
+                            <option>Kapcsolati nehézség</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Üzenet</label>
-                        <textarea rows="5" placeholder="Kérem, írja le röviden, miben kér segítséget..."></textarea>
+                        <textarea rows="4"></textarea>
                     </div>
                     <button type="submit" class="submit-btn">Üzenet küldése</button>
                 </form>
@@ -900,82 +361,21 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div>
-                <div class="footer-logo">Mentálhigiéné</div>
-                <p class="footer-description">
-                    Mentálhigiénés támogatás biztonságos, elfogadó légkörben. 
-                    Szakmai hozzáértés és empátia minden helyzetben, az Ön lelki egyensúlyáért.
-                </p>
-            </div>
-            <div class="footer-section">
-                <h4>Támogatási területek</h4>
-                <ul class="footer-links">
-                    <li><a href="#teruletek">Kríziskezelés</a></li>
-                    <li><a href="#teruletek">Stresszkezelés</a></li>
-                    <li><a href="#teruletek">Önismeret</a></li>
-                    <li><a href="#teruletek">Kapcsolati segítség</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Információ</h4>
-                <ul class="footer-links">
-                    <li><a href="#rolam">Rólam</a></li>
-                    <li><a href="#tamogatas">Támogatás</a></li>
-                    <li><a href="#">GYIK</a></li>
-                    <li><a href="#">Adatvédelem</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Kapcsolat</h4>
-                <ul class="footer-links">
-                    <li><a href="tel:+36301234567">+36 30 123 4567</a></li>
-                    <li><a href="mailto:info@mentalhigienes.hu">info@mentalhigienes.hu</a></li>
-                    <li><a href="#">Budapest</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Mentálhigiénés Szakember. Minden jog fenntartva.</p>
-        </div>
+        <p>&copy; 2026 Mentálhigiénés Szakember. Minden jog fenntartva.</p>
     </footer>
 
     <script>
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Animációk kezelése
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         function scrollToContact() {
             document.getElementById('kapcsolat').scrollIntoView({ behavior: 'smooth' });
@@ -983,7 +383,7 @@
 
         function handleSubmit(e) {
             e.preventDefault();
-            alert('Köszönöm megkeresését! 24 órán belül felveszem Önnel a kapcsolatot.');
+            alert('Köszönöm megkeresését! Hamarosan válaszolok.');
             e.target.reset();
         }
     </script>
